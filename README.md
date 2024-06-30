@@ -1,2 +1,23 @@
 # Win11-home-lab
- Official MS Lab Kit
+30.06.24
+After I failed to participate in ITF+ cert exam(due to technical issues) I decided to go back to do some hands-on projects after nearly 6 months break.
+
+I chose Windows 11 and Office 365 Deployment Lab Kit. This is because I am redirecting to more support/security roles and wanted to know how is deployment and management of Windows and other Ms apps is working.
+
+It wasn't easy to even kick off.
+
+You need to have Hyper-V installed on your machine. Hyper-V is virtualization software provided by MS in their Win10/Win11 Pro,Enterprise and Education editions. The problem was I had Windows 11 Home on my machine.  I could go to cloud straight away but i wanted to start locally.
+
+## How to turn on Hyper-V on Win11 Home?
+
+After some research I found a script that worked
+
+```bash
+pushd "%~dp0"
+dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
+for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
+del hyper-v.txt
+Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
+pause
+
+```
