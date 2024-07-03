@@ -21,3 +21,6 @@ Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /A
 pause
 
 ```
+
+## How to turn on internet connection on Vms?
+Official readme describes this process but it misses one point. After you create external switch you have to turn it on. Pick a VM you want to use > right click >properties > look for network adapter's virtual switch and pick your external switch from the list
