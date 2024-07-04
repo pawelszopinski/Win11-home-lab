@@ -24,3 +24,7 @@ pause
 
 ## How to turn on internet connection on Vms?
 Official readme describes this process but it misses one point. After you create external switch you have to turn it on. Pick a VM you want to use > right click >properties > look for network adapter's virtual switch and pick your external switch from the list
+
+## Official manual (Win11_23H2_Lab Guide_5.15
+)
+Unfortunately it's outdated. To name one point, there is nothing about MS Entra or Entra Connect. All runs on Azure Active Directory. Although it's very similar configuration in most cases, you will have to use common sense and omit certain areas. New edition of this manual should be released this August(2024) and let's hope it will be updated.
